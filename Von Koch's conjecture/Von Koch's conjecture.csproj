@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>Von_Koch_s_conjecture</RootNamespace>
   </PropertyGroup>
 
 </Project>
