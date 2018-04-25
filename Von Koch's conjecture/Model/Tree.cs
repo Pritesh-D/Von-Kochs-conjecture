@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Von_Koch_s_conjecture.Model
 {
-    public class Tree
+    public class Tree : ICloneable
     {
         private List<Node> _store;
 
         public Tree()
         {
             _store = new List<Node>();
+        }
+
+        protected Tree(Tree another)
+        {
+            _store = new List<Node>(another.GetAllNodes());
         }
 
         public void AddNode(Node node)
@@ -28,6 +32,11 @@ namespace Von_Koch_s_conjecture.Model
         {
             return _store.Where(
                 n => (n.Name.Equals(node.Name) == false && n.Connections.Contains(node.Name))).ToList();
+        }
+
+        public object Clone()
+        {
+            return new Tree(this);
         }
     }
 }

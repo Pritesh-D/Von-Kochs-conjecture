@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Von_Koch_s_conjecture;
 using Von_Koch_s_conjecture.Model;
 using Xunit;
-using System.Linq;
 using System.Data;
 
 namespace Test
