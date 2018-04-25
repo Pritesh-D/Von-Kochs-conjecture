@@ -32,7 +32,16 @@ namespace Von_Koch_s_conjecture
             }
 
             while (isAnySuccess == false) ;
-            lstThreads.ForEach(th => th.Abort());
+            lstThreads.ForEach(th =>
+            {
+                try
+                {
+                    th.Abort();
+                }
+                catch (Exception)
+                {
+                }
+            });
 
             return result;
         }
